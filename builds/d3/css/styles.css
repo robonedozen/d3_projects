@@ -8,7 +8,7 @@ line {
 }
 
 path {
-  stroke: green;
+  stroke: black;
   fill: none;
   stroke-width: 2px;
 
@@ -26,10 +26,10 @@ g.hidden path {
 }
 
 g.tick line {
-  stroke: blue;
+  stroke: black;
 }
 
 g.tick text {
   font-size: 12px;
-  fill: purple;
+  fill: black;
 }
