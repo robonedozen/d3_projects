@@ -18,11 +18,12 @@ var y = d3.scaleLinear().range([height, 0]);
 
 var xAxis = d3.axisBottom()
     .scale(x)
-    .tickSizeInner(4)
+    // .tickSizeInner(4)
     // .ticks(365, "~s")
     // .tickSizeOuter(10)
     // .ticks(d3.timeDay.every(180))
     .tickFormat(d3.timeFormat("%b %d"));
+    // .tickFormat(x => /[Jan Mar Apr]/.test(x) ? x: "");
 
 
 var yAxis = d3.axisLeft()
