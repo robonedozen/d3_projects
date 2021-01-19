@@ -1,13 +1,13 @@
-d3.csv("data/cardioActivities_simple2.csv", function(error, data) {
+d3.csv("js/data/cardioActivities_simple.csv", function(error, data) {
 
 var iWidth = window.innerWidth;
 var buffer = 100;
 
-var   margin = { top: 0, right: 0, bottom: 30, left: 40 },
-    // width = 1200 - margin.left - margin.right,
-    // height = 400 - margin.top - margin.bottom;
-    height = 410,
-    width = iWidth - buffer - 120;
+var   margin = { top: 0, right: 0, bottom: 50, left: 40 },
+    width = 1200 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+    // height = 410,
+    // width = iWidth - buffer - 120;
 
 // Parse the date / time
 var	parseDate = d3.isoParse
@@ -18,8 +18,12 @@ var y = d3.scaleLinear().range([height, 0]);
 
 var xAxis = d3.axisBottom()
     .scale(x)
-    .tickFormat(d3.timeFormat("%b"))
-    .ticks(d3.timeDay.every(365));
+    .tickSizeInner(4)
+    // .ticks(365, "~s")
+    // .tickSizeOuter(10)
+    // .ticks(d3.timeDay.every(180))
+    .tickFormat(d3.timeFormat("%b %d"));
+
 
 var yAxis = d3.axisLeft()
     .scale(y)
@@ -61,7 +65,7 @@ var svg = d3.select("body").append("svg")
     .selectAll("text")
       .style("text-anchor", "left")
       .attr("dx", "-2em")
-      .attr("dy", ".05em")
+      .attr("dy", "-0.7em")
       .attr("transform", "rotate(-90)" );
       // .attr()
 

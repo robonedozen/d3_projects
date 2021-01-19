@@ -3,7 +3,7 @@
 // var parseDate = d3.timeParse("%m/%d/%Y");
 var	parseDate = d3.isoParse;
 
-d3.csv('data/cardioActivities_simple2.csv')
+d3.csv('js/data/cardioActivities_simple2.csv')
   .row(function(d){ return {date: parseDate(d.date), distance: Number(d.distance.trim())};})
   .get(function(error,d){
 
